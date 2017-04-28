@@ -43,3 +43,6 @@ c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNET
 c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\obj\Debug\ASPNETWebAPI.csprojResolveAssemblyReference.cache
 c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\obj\Debug\ASPNETWebAPI.dll
 c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\obj\Debug\ASPNETWebAPI.pdb
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\bin\EmployeeDataAccess.dll
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\bin\EmployeeDataAccess.pdb
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\ASPNETWebAPI\bin\EmployeeDataAccess.dll.config

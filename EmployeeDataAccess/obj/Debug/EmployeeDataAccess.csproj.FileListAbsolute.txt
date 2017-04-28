@@ -1,0 +1,10 @@
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.dll.config
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.dll
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.pdb
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EntityFramework.dll
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EntityFramework.xml
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.csprojResolveAssemblyReference.cache
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.dll
+c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.pdb
