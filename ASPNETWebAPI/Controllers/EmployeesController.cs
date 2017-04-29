@@ -44,7 +44,26 @@ namespace ASPNETWebAPI.Controllers
                     return message;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                {
+                    var emp = entities.tblEmployees.FirstOrDefault(e => e.ID == id);
+                    if (emp != null)
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    else
+                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"Employee with id {id.ToString()} not found.");
+                }
+            }
+            catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
