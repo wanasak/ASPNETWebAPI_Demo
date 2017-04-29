@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using ASPNETWebAPI.App_Start;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace ASPNETWebAPI
@@ -25,6 +27,14 @@ namespace ASPNETWebAPI
            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
             // Change JSON data to be camel case
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            // Return JSON only
+            //config.Formatters.Remove(config.Formatters.XmlFormatter);
+            // Return XML only
+            //config.Formatters.Remove(config.Formatters.JsonFormatter);
+            // Return JSON data when a request is made for text/html
+            //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            // Register custom format 
+            config.Formatters.Add(new CustomJsonFormatter());
         }
     }
 }
