@@ -10,7 +10,8 @@ namespace ASPNETWebAPI.Controllers
 {
     public class EmployeesController : ApiController
     {
-        public IEnumerable<tblEmployee> Get()
+        [HttpGet]
+        public IEnumerable<tblEmployee> LoadEmployees()
         {
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {
