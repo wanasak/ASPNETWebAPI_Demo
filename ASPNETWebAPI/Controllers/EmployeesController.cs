@@ -58,7 +58,11 @@ namespace ASPNETWebAPI.Controllers
                 {
                     var emp = entities.tblEmployees.FirstOrDefault(e => e.ID == id);
                     if (emp != null)
+                    {
+                        entities.tblEmployees.Remove(emp);
+                        entities.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK);
+                    }
                     else
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"Employee with id {id.ToString()} not found.");
                 }
