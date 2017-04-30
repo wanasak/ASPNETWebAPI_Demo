@@ -35,6 +35,9 @@ namespace ASPNETWebAPI
             //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             // Register custom format 
             config.Formatters.Add(new CustomJsonFormatter());
+
+            // Register 
+            config.Filters.Add(new RequiredHttpsAttribute());
         }
     }
 }
