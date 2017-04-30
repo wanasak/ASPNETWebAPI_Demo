@@ -1,4 +1,5 @@
 ﻿using ASPNETWebAPI.App_Start;
+using ASPNETWebAPI.Core;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,9 @@ namespace ASPNETWebAPI
 
             // Register 
             config.Filters.Add(new RequiredHttpsAttribute());
+
+            // Register basic authen across the entire web api
+            //config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }
 }

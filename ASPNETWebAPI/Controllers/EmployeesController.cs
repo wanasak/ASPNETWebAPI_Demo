@@ -1,4 +1,5 @@
-﻿using EmployeeDataAccess;
+﻿using ASPNETWebAPI.Core;
+using EmployeeDataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ASPNETWebAPI.Controllers
 {
     public class EmployeesController : ApiController
     {
+        [BasicAuthentication] // enable basic authen for specific method
         [HttpGet]
         public HttpResponseMessage LoadEmployees(string gender = "all")
         {

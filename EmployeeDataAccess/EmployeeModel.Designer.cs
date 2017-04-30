@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\mycos-pc\documents\visual studio 2017\Projects\ASPNETWebAPI_demo\EmployeeDataAccess\EmployeeModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\SMUDGER\Documents\GitHub\ASPNETWebAPI_Demo\EmployeeDataAccess\EmployeeModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
