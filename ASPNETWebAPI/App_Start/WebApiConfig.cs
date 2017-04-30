@@ -15,6 +15,9 @@ namespace ASPNETWebAPI
         {
             // Web API configuration and services
 
+            // Enble CORS
+            config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

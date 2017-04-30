@@ -5,6 +5,14 @@
 </div>
 <div class="row">
     <div class="col-md-12">
+        USername: <input type="text" id="txtUsername" class="form-control" />
+        Password: <input type="password" id="txtPassword" class="form-control" />
+        <br />
+        <input id="btnAuthen" type="button" class="btn btn-default" value="Authen and Get Employees" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
         <input type="button" class="btn btn-default" id="btnGetEmployees" value="Get Employees" />
         <ul id="ulEmployees"></ul>
     </div>
@@ -28,6 +36,33 @@
                         });
                     }
                 });
+            });
+            $('#btnAuthen').click(function () {
+                var username = $('#txtUsername').val();
+                var password = $('#txtPassword').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:1256/api/employees',
+                    dataType: 'json',
+                    // btoa() -> method encoodes a string to base64
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(username + ':' + password)
+                    },
+                    success: function (data) {
+                        ulEmployees.empty();
+                        $.each(data, function (index, val) {
+                            var fullname = val.first + ' ' + val.last;
+                            ulEmployees.append('<li>' + fullname + '</li>');
+                        });
+                    },
+                    complete: function (jqXHR) {
+                        if (jqXHR.status == '401') {
+                            ulEmployees.empty();
+                            ulEmployees.append('<li style="color:red">' + jqXHR.status + ' ' + jqXHR.statusText + '</li>');
+                        }
+                    }
+                })
             });
         });
     </script>    

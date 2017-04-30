@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ASPNETWebAPI.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class EmployeesController : ApiController
     {
         [BasicAuthentication] // enable basic authen for specific method
