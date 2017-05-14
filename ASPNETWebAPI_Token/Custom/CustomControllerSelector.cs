@@ -33,11 +33,16 @@ namespace ASPNETWebAPI_Token.Custom
             //    versionNumber = versionQueryString["v"];
 
             // Get version number from custom header
-            string customHeader = "X-StudentService-Version";
-            if (request.Headers.Contains(customHeader))
-            {
-                versionNumber = request.Headers.GetValues(customHeader).FirstOrDefault();
-            }
+            //string customHeader = "X-StudentService-Version";
+            //if (request.Headers.Contains(customHeader))
+            //{
+            //    versionNumber = request.Headers.GetValues(customHeader).FirstOrDefault();
+            //}
+
+            // Get version number from accept header
+            var acceptHeader = request.Headers.Accept.Where(a => a.Parameters.Count(p => p.Name.ToLower() == "version") > 0);
+            if (acceptHeader.Any())
+                versionNumber = acceptHeader.First().Parameters.First(p => p.Name.ToLower() == "version").Value;
 
             controllerName = versionNumber == "1" ? controllerName : controllerName + "V2";
 
