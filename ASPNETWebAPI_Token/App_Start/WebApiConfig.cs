@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using ASPNETWebAPI_Token.Custom;
+using System.Web.Http.Dispatcher;
 
 namespace ASPNETWebAPI_Token
 {
@@ -19,6 +21,9 @@ namespace ASPNETWebAPI_Token
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            // Replace IHttpControllerSelector with CustomControllerSelector
+            config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

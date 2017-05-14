@@ -29,14 +29,14 @@ namespace ASPNETWebAPI_Token.Controllers
         //{
         //    return Request.CreateResponse(students);
         //}
-        [Route("api/v1/students")]
+        //[Route("api/v1/students")]
         // Using IHttpActionResult
         public IHttpActionResult Get()
         {
             return Ok(students);
         }
 
-        [Route("api/v1/students/{id:int}", Name = "GetStudentByID")]
+        //[Route("api/v1/students/{id:int}", Name = "GetStudentByID")]
         //public HttpResponseMessage Get(int id)
         //{
         //    Student student = students.FirstOrDefault(s => s.ID == id);

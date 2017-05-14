@@ -17,13 +17,13 @@ namespace ASPNETWebAPI_Token.Controllers
              new Student2() { ID = 3, FirstName = "John", LastName = "J"}
          };
 
-        [Route("api/v2/students")]
+        //[Route("api/v2/students")]
         public IHttpActionResult Get()
         {
             return Ok(students);
         }
 
-        [Route("api/v2/students/{id}")]
+        //[Route("api/v2/students/{id}")]
         public IHttpActionResult Get(int id)
         {
             Student2 student = students.FirstOrDefault(s => s.ID == id);
