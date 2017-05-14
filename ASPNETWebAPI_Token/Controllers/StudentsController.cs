@@ -23,9 +23,16 @@ namespace ASPNETWebAPI_Token.Controllers
             return students;
         }
 
+        [Route("{id:int}")]
         public Student Get(int id)
         {
             return students.FirstOrDefault(s => s.ID == id);
+        }
+
+        [Route("{name}")]
+        public Student Get(string name)
+        {
+            return students.FirstOrDefault(s => s.Name.ToUpper() == name.ToUpper());
         }
 
         [Route("{id}/courses")]
