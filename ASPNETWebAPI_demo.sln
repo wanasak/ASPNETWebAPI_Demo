@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataAccess", "Emplo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETWebAPI_Token", "ASPNETWebAPI_Token\ASPNETWebAPI_Token.csproj", "{B726F91B-4D91-4938-8B9E-52B0085673E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeService", "EmployeeService\EmployeeService.csproj", "{CDA7C124-C3D2-4D13-A6CC-200A1F9378AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B726F91B-4D91-4938-8B9E-52B0085673E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B726F91B-4D91-4938-8B9E-52B0085673E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B726F91B-4D91-4938-8B9E-52B0085673E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA7C124-C3D2-4D13-A6CC-200A1F9378AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA7C124-C3D2-4D13-A6CC-200A1F9378AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA7C124-C3D2-4D13-A6CC-200A1F9378AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA7C124-C3D2-4D13-A6CC-200A1F9378AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
