@@ -9,6 +9,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="well">
             <input id="btnLoadEmployees" type="button" class="btn btn-success" value="Load Employees" />
+            <input id="btnLogout" type="button" class="btn btn-danger" value="Logout" />
         </div>
         <div id="divData" class="well hidden">
             <table id="tblData" class="table table-condensed">
@@ -92,6 +93,11 @@
                         $('#divError').show('fade');
                     }
                 });
+            });
+            // Logout
+            $('#btnLogout').click(function () {
+                sessionStorage.removeItem('accessToken');
+                window.location.href = 'Login.html';
             });
         });
     </script>
