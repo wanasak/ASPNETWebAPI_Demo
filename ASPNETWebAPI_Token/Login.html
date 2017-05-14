@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Register</title>
+    <title>Login</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body style="padding-top: 20px;">
@@ -12,16 +12,16 @@
                 <thead>
                     <tr class="success">
                         <th colspan="2">
-                            New User Register
-                            <a href="Login.html" class="btn btn-success pull-right">Login</a>
+                            Login
+                            <a href="Register.html" class="btn btn-success pull-right">Register</a>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Email</td>
+                        <td>Username</td>
                         <td>
-                            <input type="email" id="txtEmail" placeholder="Email" />
+                            <input type="text" id="txtUsername" placeholder="Username" />
                         </td>
                     </tr>
                     <tr>
@@ -31,14 +31,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Confirm Password</td>
-                        <td>
-                            <input type="password" id="txtConfirmPassword" placeholder="Confirm Password" />
-                        </td>
-                    </tr>
-                    <tr>
                         <td colspan="2">
-                            <input type="button" id="btnRegister" value="Register" class="btn btn-success" />
+                            <input type="button" id="btnLogin" value="Login" class="btn btn-success" />
                         </td>
                     </tr>
                 </tbody>
@@ -85,17 +79,21 @@
                 $('#divError').hide('fade');
             });
             // Save the new user
-            $('#btnRegister').click(function () {
+            $('#btnLogin').click(function () {
                 $.ajax({
-                    url: '/api/account/register',
+                    url: '/token',
                     method: 'POST',
+                    contentType: 'application/json',
                     data: {
-                        email: $('#txtEmail').val(),
+                        username: $('#txtUsername').val(),
                         password: $('#txtPassword').val(),
-                        confirmPassword: $('#txtConfirmPassword').val()
+                        grant_type: 'password'
                     },
-                    success: function () {
-                        $('#successModal').modal('show');
+                    success: function (response) {
+                        // Session storage is lost when the browser is closed.
+                        sessionStorage.setItem('accessToken', response.access_token);
+                        alert('successs');
+                        window.localStorage.href = 'Data.html';
                     },
                     error: function (jqXHR) {
                         $('#divErrorText').text(jqXHR.responseText);
