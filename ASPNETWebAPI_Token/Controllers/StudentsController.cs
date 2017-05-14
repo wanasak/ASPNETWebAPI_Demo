@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace ASPNETWebAPI_Token.Controllers
 {
+    [RoutePrefix("api/students")]
     public class StudentsController : ApiController
     {
         static List<Student> students = new List<Student>()
@@ -27,7 +28,7 @@ namespace ASPNETWebAPI_Token.Controllers
             return students.FirstOrDefault(s => s.ID == id);
         }
 
-        [Route("api/students/{id}/courses")]
+        [Route("{id}/courses")]
         public IEnumerable<string> GetStudentCourses(int id)
         {
             if (id == 1)
