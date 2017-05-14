@@ -6,6 +6,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+// Advantages of IHttpActionResult
+// 1) The code is cleaner and easier to read
+// 2) Unit teting controller action method is much simpler.
+// Helper methods of IHttpActionResult
+// Ok(), NotFound(), BadRequest(), Conflict(), Created(), InternalServerError(), Redirect() and Unauthorization()
+
 namespace ASPNETWebAPI_Token.Controllers
 {
     [RoutePrefix("api/students")]
@@ -18,15 +24,31 @@ namespace ASPNETWebAPI_Token.Controllers
             new Student() { ID = 3, Name = "John" }
         };
 
-        public IEnumerable<Student> Get()
+        // Using HttpResponseMessage
+        //public HttpResponseMessage Get()
+        //{
+        //    return Request.CreateResponse(students);
+        //}
+        // Using IHttpActionResult
+        public IHttpActionResult Get()
         {
-            return students;
+            return Ok(students);
         }
 
         [Route("{id:int}", Name = "GetStudentByID")]
-        public Student Get(int id)
+        //public HttpResponseMessage Get(int id)
+        //{
+        //    Student student = students.FirstOrDefault(s => s.ID == id);
+        //    if (student == null)
+        //        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Student not found.");
+        //    return Request.CreateResponse(student);
+        //}
+        public IHttpActionResult Get(int id)
         {
-            return students.FirstOrDefault(s => s.ID == id);
+            Student student = students.FirstOrDefault(s => s.ID == id);
+            if (student == null)
+                return Content(HttpStatusCode.NotFound, "Student not found.");
+            return Ok(student);
         }
 
         [Route("{name}")]
