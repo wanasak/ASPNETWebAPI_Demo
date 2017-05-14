@@ -23,7 +23,7 @@ namespace ASPNETWebAPI_Token.Controllers
             return students;
         }
 
-        [Route("{id:int}")]
+        [Route("{id:int}", Name = "GetStudentByID")]
         public Student Get(int id)
         {
             return students.FirstOrDefault(s => s.ID == id);
@@ -44,6 +44,15 @@ namespace ASPNETWebAPI_Token.Controllers
                 return new List<string>() { "ASP.NET Web API", "C#", "SQL Server" };
             else
                 return new List<string>() { "Bootstrap", "jQuery", "AngularJs" };
+        }
+
+        public HttpResponseMessage Post(Student student)
+        {
+            students.Add(student);
+            var response = Request.CreateResponse(HttpStatusCode.Created);
+            //response.Headers.Location = new Uri(Request.RequestUri + "/" + student.ID.ToString());
+            response.Headers.Location = new Uri(Url.Link("GetStudentByID", new { id = student.ID }));
+            return response;
         }
     }
 }
